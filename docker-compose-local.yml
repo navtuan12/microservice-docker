@@ -2,7 +2,7 @@ version: '3.3'
 
 services:
   config-server:
-    image: config-server:v1
+    image: 172.26.195.46:8082/repository/nexus-docker-repo/config-server:${BUILD_ID}
     build: ./config-server
     env_file:
       - config-server/env/native.env
@@ -10,7 +10,7 @@ services:
       - '8088:8080'
 
   discovery-server:
-    image: discovery-server:v1
+    image: 172.26.195.46:8082/repository/nexus-docker-repo/discovery-server:${BUILD_ID}
     build: ./discovery-server
     env_file:
       - discovery-server/env/local.env
@@ -20,7 +20,7 @@ services:
       - config-server
 
   employee-service:
-    image: employee-service:v1
+    image: 172.26.195.46:8082/repository/nexus-docker-repo/employee-service:${BUILD_ID}
     build: ./employee-service
     env_file:
       - employee-service/env/local.env
@@ -32,7 +32,7 @@ services:
     restart: on-failure
 
   organization-service:
-    image: organization-service:v1
+    image: 172.26.195.46:8082/repository/nexus-docker-repo/organization-service:${BUILD_ID}
     build: ./organization-service
     env_file:
       - organization-service/env/local.env
