@@ -7,7 +7,7 @@ import org.springframework.cloud.config.server.EnableConfigServer;
 @SpringBootApplication
 @EnableConfigServer
 public class ConfigServerApplication {
-
+    //this comment use to trigger jenkins build
     public static void main(String[] args) {
         SpringApplication.run(ConfigServerApplication.class, args);
     }
